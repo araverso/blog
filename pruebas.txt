@@ -1,0 +1,12 @@
+
+/*Worldbuilding*/
+.transición {
+    width: 100px;
+    height: 100px;
+    background: var(--color-textos);
+    transition: width 2s;
+}
+
+.transición:hover{
+    width: 100%;
+}

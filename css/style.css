@@ -3,20 +3,35 @@
     --color-textos:#A94A4A;
     --color-titulo: #889E73; 
     --color-secundario: #F4D793;
-    --color-negro: #000000;
+    --color-negro: rgb(0, 0, 0);
     --color-blanco: white;
     --titulo: "Playfair Display", serif;
     --texto: "Open Sans";
 }
 
-html{
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
     font-family: var(--texto);
 }
 
-body{
-    margin: 0%;
-    background-color: var(--color-blanco);
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    pointer-events: none;
 }
+
+
 
 /*Configuración general*/
 h1{
@@ -58,6 +73,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 0%;
     padding: 0%;
     width: 500px;
@@ -84,14 +100,14 @@ header{
 
 /*Main*/
 
-.grilla{
+.grilla-main{
     margin: 2%;
     display: grid;
     grid-template-columns: 70% 30%;
     grid-template-rows: 0.5fr;
 }
 
-.grilla-item{
+.grilla-item-main{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,6 +120,7 @@ header{
     position: relative;
     display: inline-block; /* importante para que el pseudo-elemento se alinee con el contenido */
     padding-bottom: 1%; /* espacio para la “sombra” debajo */
+    font-family: var(--titulo);
 }
 
 .titulo::after {
@@ -112,7 +129,7 @@ header{
     bottom: 0;
     left: 50%; /* centro */
     transform: translateX(-50%); /* lo centra */
-     width: 200%; /* más ancho que el texto */
+    width: 100%; /* más ancho que el texto */
     height: 4px;
     background: linear-gradient(to right, transparent, rgba(107, 13, 13, 0.5), transparent);
     pointer-events: none;
@@ -129,6 +146,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 5%;
 }
 
 .seccion-card{
@@ -136,9 +154,64 @@ header{
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+/*Boostrap*/
+
 .card{
     margin: 3%;
     padding: 5%
+}
+
+.btn-color{
+    background-color: var(--color-titulo);
+    color: var(--color-blanco);
+    box-shadow: 0px 0px 10px rgb(56, 102, 70);
+}
+
+.btn-color:hover{
+    background-color: var(--color-textos);
+    box-shadow: 0px 0px 10px rgb(102, 56, 56);
+}
+
+/*Worldbuilding*/
+
+.estructura{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 5%;
+    font-family: var(--titulo);
+}
+
+.seccion-lairen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5%;
+    margin: 5% 0% 5% 0%;
+    padding: 5% 2% 2% 2%;
+    background-image: url(../imagenes/fondo/birmingham-museums-trust-wKlHsooRVbg-unsplash.jpg);
+}
+
+.card-img-top{
+    border-radius: 10px;
+}
+
+.proyectos-boton{
+    margin: 10% 5% 5% 5%;
+    background-color: var(--color-titulo);
+    padding: 1%;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--color-blanco);
+    box-shadow: 0px 0px 10px rgb(56, 102, 70);
+}
+
+.proyectos-boton:hover{
+    background-color: var(--color-textos);
+    box-shadow: 0px 0px 10px rgb(102, 56, 56);
 }
 
 /*Footer*/
